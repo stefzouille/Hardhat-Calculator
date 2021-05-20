@@ -32,8 +32,7 @@ let calculator;
 
   describe('add', () => {
     it('are you add friend', async () => {
-      expect(await calculator.add(2, 5)).to.equal(7);
-    // expect(await [2 + 5]).to.eql([7])
+      expect(await calculator.add(2, 5)).to.equal(7)
     })
     
   })
