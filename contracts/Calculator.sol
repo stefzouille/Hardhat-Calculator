@@ -1,35 +1,29 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
 contract Calculator {
-    int256 public c;
-
-    function add(int256 a, int256 b) public {
-        c = a + b;
+    function add(int256 a, int256 b) public pure returns (int256) {
+        return a + b;
     }
 
-    function sub(int256 a, int256 b) public {
-        c = a - b;
+    function sub(int256 a, int256 b) public pure returns (int256) {
+        return a - b;
     }
 
-    function mul(int256 a, int256 b) public {
-        c = a * b;
+    function mul(int256 a, int256 b) public pure returns (int256) {
+        return a * b;
     }
 
-    function div(int256 a, int256 b) public {
+    function div(int256 a, int256 b) public pure returns (int256) {
         require(b > 0, "The second parameter should be larger than 0");
 
-        c = a / b;
+        return a / b;
     }
 
-    function modulo(int256 a, int256 b) public {
+    function modulo(int256 a, int256 b) public pure returns (int256) {
         require(b > 0, "The second parameter should be larger than 0");
 
-        c = a % b;
-    }
-
-    function getResult() public view returns (int256 x) {
-        return c;
+        return a % b;
     }
 }
