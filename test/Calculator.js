@@ -1,6 +1,8 @@
 // import "../contracts/Calculator.sol"
 // const { expect } = require('chai');
 
+const { expect } = require("chai")
+
 // describe('Calculator', () => {
 //   let Calculator, New;
 //   it("shouldn't allow division by zero", async function () {
@@ -18,8 +20,45 @@
 // });
 // const calculator = artifacts.require("Calculator");
 
-describe('deploy', () => {
-  it('are you deploy friend', async () => {
+describe('Calculator contract', () => {
+let owner, Calculator, calculator;
 
+  describe('deploy', () => {
+    it('are you deploy friend', async () => {
+      
+    })
+    
+  })
+
+  describe('add', () => {
+    it('are you add friend', async () => {
+    expect( )
+    })
+    
+  })
+  describe('sub', () => {
+    it('are you sub friend', async () => {
+    expect()
+    })
+    
+  })
+
+  describe('mul', () => {
+    it('are you mul friend', async () => {
+    expect()
+    })
+    
+  })
+  describe('div', () => {
+    it('are you div friend', async () => {
+    expect()
+    })
+    
+  })
+  describe('modulo', () => {
+    it('are you modulo friend', async () => {
+    expect()
+    })
+    
   })
 })
