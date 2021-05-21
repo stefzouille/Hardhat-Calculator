@@ -1,5 +1,3 @@
-// import "../contracts/Calculator.sol"
-// const { expect } = require('chai');
 
 const { expect } = require("chai")
 const { ethers } = require("hardhat");
@@ -21,12 +19,13 @@ const { ethers } = require("hardhat");
 // });
 // const calculator = artifacts.require("Calculator");
 
-describe("Calculator", function() {
-let calculator;
+describe("Calculator", function () {
+  let calculator, Calculator;
 
-  this.beforeEach(async () => {
-    const Calculator = await ethers.getContractFactory("Calculator");
+  beforeEach(async () => {
+    Calculator = await ethers.getContractFactory("Calculator");
     calculator = await Calculator.deploy();
+    await calculator.deployed()
   })
 
 
@@ -34,32 +33,38 @@ let calculator;
     it('are you add friend', async () => {
       expect(await calculator.add(2, 5)).to.equal(7)
     })
-    
+
   })
-    
+
   describe('sub', () => {
     it('are you sub friend', async () => {
-    expect(await calculator.sub(5, 2)).to.equal(3)
+      expect(await calculator.sub(5, 2)).to.equal(3)
     })
-    
+
   })
 
   describe('mul', () => {
     it('are you mul friend', async () => {
-    expect(await calculator.mul(2, 5)).to.equal(10)
+      expect(await calculator.mul(2, 5)).to.equal(10)
     })
-    
+
   })
   describe('div', () => {
     it('are you div friend', async () => {
-    expect(await calculator.div(10, 2)).to.equal(5)
+      expect(await calculator.div(10, 2)).to.equal(5)
     })
-    
   })
+  // describe('div', () => {
+  //   it('are you div friend', async () => {
+  //     await expect(calculator.div(2, 0)).to.be.revertedWith('hoho')
+  //     //expect(await calculator.div(10, 2)).to.equal(5)
+  //   })
+
+  // })
   describe('modulo', () => {
     it('are you modulo friend', async () => {
-    expect(await calculator.modulo(10, 6)).to.equal(4)
+      expect(await calculator.modulo(10, 6)).to.equal(4)
     })
-    
+
   })
-  })
+})
